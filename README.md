@@ -1,0 +1,1 @@
+This project is "Online Music Library". It is a web application based on asp.net MVC platform and C# language.
