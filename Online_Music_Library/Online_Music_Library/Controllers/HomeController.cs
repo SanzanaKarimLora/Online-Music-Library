@@ -22,9 +22,18 @@ namespace Online_Music_Library.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+           
 
             return View();
         }
+
+        public ActionResult Register()
+        {
+           
+
+            return View();
+        }
+
+       
     }
 }

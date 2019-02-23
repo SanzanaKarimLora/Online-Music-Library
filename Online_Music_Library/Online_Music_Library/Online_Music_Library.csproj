@@ -156,6 +156,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,6 +176,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DbModelUser.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\tblUser.cs">
       <DependentUpon>DbModelUser.tt</DependentUpon>
     </Compile>
@@ -187,7 +189,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\creative.css" />
     <Content Include="Content\css\creative.min.css" />
+    <Content Include="Content\css\Login.css" />
     <Content Include="Content\img\bg-masthead.jpg" />
+    <Content Include="Content\img\bgLog.jpg" />
     <Content Include="Content\img\portfolio\fullsize\1.jpg" />
     <Content Include="Content\img\portfolio\fullsize\2.jpg" />
     <Content Include="Content\img\portfolio\fullsize\3.jpg" />
@@ -1859,6 +1863,10 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\_LayoutLoginPage.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Create.cshtml" />
+    <Content Include="Views\Login\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
