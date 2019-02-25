@@ -11,6 +11,7 @@
         <th>Category</th>
         <th>Language</th>
         <th>Lyrics</th>
+        <th></th>
     </tr>
     @for(int i=0;i<Model.Rows.Count;i++)
     {
@@ -20,6 +21,10 @@
         <td>@Model.Rows[i][3]</td>
         <td>@Model.Rows[i][4]</td>
         <td>@Model.Rows[i][5]</td>
+        <td>
+            <a href="@Url.Action("Edit","Song",new {@id=Model.Rows[i][0] })">Edit</a>
+            <a href="@Url.Action("Delete","Song",new {@id=Model.Rows[i][0] })">Delete</a>
+        </td>
     </tr>
     }
 </table>

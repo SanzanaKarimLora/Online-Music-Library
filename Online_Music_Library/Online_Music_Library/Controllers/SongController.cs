@@ -83,40 +83,38 @@ namespace Online_Music_Library.Controllers
 
         // POST: Song/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(SongModel songModel)
         {
-            try
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                sqlCon.Open();
+                string query = "UPDATE tblSongs SET song_name=@song_name,song_artist=@song_artist,song_category=@song_category,language=@language,lyrics=@lyrics where song_id=@song_id";
+                SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                sqlCmd.Parameters.AddWithValue("@song_id", songModel.song_id);
+                sqlCmd.Parameters.AddWithValue("@song_name", songModel.song_name);
+                sqlCmd.Parameters.AddWithValue("@song_artist", songModel.song_artist);
+                sqlCmd.Parameters.AddWithValue("@song_category", songModel.song_category);
+                sqlCmd.Parameters.AddWithValue("@language", songModel.language);
+                sqlCmd.Parameters.AddWithValue("@lyrics", songModel.lyrics);
+                sqlCmd.ExecuteNonQuery();
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Song");
         }
 
         // GET: Song/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                string query = "DELETE FROM tblSongs where song_id=@song_id";
+                SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                sqlCmd.Parameters.AddWithValue("@song_id", id);
+                sqlCmd.ExecuteNonQuery();
+            }
+            return RedirectToAction("Song");
         }
 
-        // POST: Song/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }
