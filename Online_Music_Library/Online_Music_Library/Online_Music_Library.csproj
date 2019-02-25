@@ -155,12 +155,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SongController.cs" />
+    <Compile Include="Controllers\SongsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DbModelUser.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,6 +181,8 @@
       <DependentUpon>DbModelUser.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\SongModel.cs" />
+    <Compile Include="Models\Songs.cs" />
     <Compile Include="Models\tblUser.cs">
       <DependentUpon>DbModelUser.tt</DependentUpon>
     </Compile>
@@ -1867,9 +1873,17 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Create.cshtml" />
     <Content Include="Views\Login\Error.cshtml" />
+    <Content Include="Views\_LayoutPageAdmin.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
+    <Content Include="Views\Admin\WelcomeAdmin.cshtml" />
+    <Content Include="Views\Admin\Sorry.cshtml" />
+    <Content Include="Views\Song\Song.cshtml" />
+    <Content Include="Views\Song\Create.cshtml" />
+    <Content Include="Views\Song\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Songs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
