@@ -156,6 +156,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SongController.cs" />
@@ -165,6 +166,24 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Contact.cs">
+      <DependentUpon>DbModelContact.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbModelContact.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbModelContact.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbModelContact.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbModelContact.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbModelContact.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbModelContact.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\DbModelUser.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1769,6 +1788,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\DbModelContact.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbModelContact.edmx</DependentUpon>
+      <LastGenOutput>DbModelContact.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DbModelContact.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbModelContact.edmx</DependentUpon>
+      <LastGenOutput>DbModelContact.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\DbModelUser.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DbModelUser.Context.cs</LastGenOutput>
@@ -1846,6 +1875,13 @@
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\vendor\jquery\jquery.min.map" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.map" />
+    <EntityDeploy Include="Models\DbModelContact.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbModelContact.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DbModelContact.edmx.diagram">
+      <DependentUpon>DbModelContact.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1869,7 +1905,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\_LayoutLoginPage.cshtml" />
@@ -1883,6 +1918,7 @@
     <Content Include="Views\Song\Song.cshtml" />
     <Content Include="Views\Song\Create.cshtml" />
     <Content Include="Views\Song\Edit.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

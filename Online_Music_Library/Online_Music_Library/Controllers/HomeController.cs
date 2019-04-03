@@ -19,16 +19,6 @@ namespace Online_Music_Library.Controllers
 
             return View();
         }
-
-        public ActionResult Contact()
-        {
-           
-
-            return View();
-        }
-
-       
-
        
     }
 }

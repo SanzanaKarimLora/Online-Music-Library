@@ -1,12 +1,27 @@
-﻿
+﻿@model Online_Music_Library.Models.Contact
+
 @{
-    ViewBag.Title = "Admin";
-    Layout = "~/Views/_LayoutPageAdmin.cshtml";
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+    <style>
+        #contact-div {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+        }
+    </style>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -38,7 +53,7 @@
                         <a class="nav-link js-scroll-trigger" @Html.ActionLink("Categories", "About")</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" @Html.ActionLink("About", "About")</a>
+                        <a class="nav-link js-scroll-trigger" @Html.ActionLink("About", "About", "Home")</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" @Html.ActionLink("Registration", "Register", "User")</a>
@@ -49,80 +64,75 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" @Html.ActionLink("Contact", "Contact", "Contact")</a>
                     </li>
+                    
                 </ul>
             </div>
         </div>
     </nav>
 
+    <div id="contact-div">
 
-    <div class="container">
 
-        <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Admin Sign In</h5>
-                        <form class="form-signin" action="Verification" method="post">
-                            <div class="form-label-group">
-                                
-                                <input type="text" name="Admin_name" class="form-control" placeholder="Admin Name" required autofocus>
+        @using (Html.BeginForm("Contact", "Contact", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
 
-                            </div>
+            <div class="form-horizontal">
+                <h6>Contact us by filling the form.</h6>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                            <div class="form-label-group">
-                                
-                                <input type="password" name="Admin_password" id="inputPassword" class="form-control" placeholder="Password" required>
 
-                            </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-                            <div class="custom-control custom-checkbox mb-3">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">Remember password</label>
-                            </div>
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"> Sign in</button>
-                            <hr class="my-4">
-                        </form>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.message, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.message, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.message, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Submit" class="btn btn-default" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-2">
+                        <label class="label-success">@ViewBag.SuccessMessage</label>
                     </div>
                 </div>
             </div>
-        </div>
+
+
+        }
+
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Online Music Library 2019</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item">
-                            <a href="https://twitter.com/">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.facebook.com/">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li class="list-inline-item">
-                            <a href="#">Privacy Policy</a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
     <!-- Bootstrap core JavaScript -->
     <script src="~/Content/vendor/jquery/jquery.min.js"></script>
     <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -133,3 +143,10 @@
     <script src="~/Content/js/creative.min.js"></script>
 </body>
 </html>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
