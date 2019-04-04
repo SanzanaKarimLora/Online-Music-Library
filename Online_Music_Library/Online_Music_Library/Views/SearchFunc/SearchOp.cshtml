@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Online_Music_Library.Models.tblSong>
+@{
+    ViewBag.Title = "SearchOp";
+}
+
+<br /> <br />
+
+@using (Html.BeginForm("SearchOp", "SearchFunc", FormMethod.Get))
+{
+    @Html.TextBox("searching")<input type="submit" value="Search" />
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Song Name</th>
+            <th>Artist</th>
+            <th>Category</th>
+            <th>Language</th>
+            <th>Lyrics</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if(Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="3" style="color:red">
+                    Keywords not matched!!!!
+                </td>
+            </tr>
+        }
+        else
+        {
+            foreach(var item in Model)
+            {
+            <tr>
+                <td>
+                    @item.song_name
+                </td>
+                <td>
+                    @item.song_artist
+                </td>
+                <td>
+                    @item.song_category
+                </td>
+                <td>
+                    @item.language
+                </td>
+                <td>
+                    @item.lyrics
+                </td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>
+

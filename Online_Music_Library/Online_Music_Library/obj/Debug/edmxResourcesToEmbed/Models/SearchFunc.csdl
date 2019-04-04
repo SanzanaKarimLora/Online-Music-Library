@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Online_Music_LibraryModelSearch" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblSong">
+    <Key>
+      <PropertyRef Name="song_id" />
+    </Key>
+    <Property Name="song_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="song_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="song_artist" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="song_category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lyrics" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="Online_Music_LibraryEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblSongs" EntityType="Self.tblSong" />
+  </EntityContainer>
+</Schema>

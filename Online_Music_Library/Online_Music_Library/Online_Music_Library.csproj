@@ -158,6 +158,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SearchFuncController.cs" />
     <Compile Include="Controllers\SongController.cs" />
     <Compile Include="Controllers\SongsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -182,8 +183,26 @@
       <DependentUpon>DbModelUser.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\SearchFunc.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchFunc.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SearchFunc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchFunc.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SearchFunc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchFunc.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\SongModel.cs" />
     <Compile Include="Models\Songs.cs" />
+    <Compile Include="Models\tblSong.cs">
+      <DependentUpon>SearchFunc.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblSongs.cs">
       <DependentUpon>Visitor.tt</DependentUpon>
     </Compile>
@@ -3351,6 +3370,16 @@
       <DependentUpon>DbModelUser.edmx</DependentUpon>
       <LastGenOutput>DbModelUser.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\SearchFunc.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SearchFunc.edmx</DependentUpon>
+      <LastGenOutput>SearchFunc.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SearchFunc.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SearchFunc.edmx</DependentUpon>
+      <LastGenOutput>SearchFunc.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Visitor.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Visitor.edmx</DependentUpon>
@@ -3493,6 +3522,13 @@
     <Content Include="Content\vendor\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\vendor\vendor\jquery\jquery.min.map" />
     <Content Include="Content\vendor\vendor\jquery\jquery.slim.min.map" />
+    <EntityDeploy Include="Models\SearchFunc.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SearchFunc.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SearchFunc.edmx.diagram">
+      <DependentUpon>SearchFunc.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -3532,6 +3568,7 @@
     <Content Include="Views\Song\Edit.cshtml" />
     <Content Include="Views\Visitor\Visitor.cshtml" />
     <Content Include="Views\Visitor\VisitorView.cshtml" />
+    <Content Include="Views\SearchFunc\SearchOp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

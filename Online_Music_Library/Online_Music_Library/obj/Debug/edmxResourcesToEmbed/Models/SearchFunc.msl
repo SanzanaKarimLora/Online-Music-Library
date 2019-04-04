@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Online_Music_LibraryModelSearchStoreContainer" CdmEntityContainer="Online_Music_LibraryEntities1">
+    <EntitySetMapping Name="tblSongs">
+      <EntityTypeMapping TypeName="Online_Music_LibraryModelSearch.tblSong">
+        <MappingFragment StoreEntitySet="tblSongs">
+          <ScalarProperty Name="song_id" ColumnName="song_id" />
+          <ScalarProperty Name="song_name" ColumnName="song_name" />
+          <ScalarProperty Name="song_artist" ColumnName="song_artist" />
+          <ScalarProperty Name="song_category" ColumnName="song_category" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="lyrics" ColumnName="lyrics" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
