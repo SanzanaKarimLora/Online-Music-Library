@@ -4,9 +4,9 @@
 }
 
 body {
-  background: #007bff;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
-  background-image:url(../img/bgLog.png);
+    background: #f4a460;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+    /*background-image:url(../img/bgLog.png);*/
 }
 
 .card-signin {
@@ -108,4 +108,8 @@ body {
 .btn-facebook {
   color: white;
   background-color: #3b5998;
+}
+
+.search {
+    background-color: #f4a460;
 }
