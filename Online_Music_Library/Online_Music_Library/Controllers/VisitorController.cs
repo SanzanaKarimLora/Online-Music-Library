@@ -33,7 +33,7 @@ namespace Online_Music_Library.Controllers
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlda = new SqlDataAdapter("SELECT * FROM tblSongs where song_id=105", sqlCon);
+                SqlDataAdapter sqlda = new SqlDataAdapter("SELECT * FROM tblSongs where song_id=104", sqlCon);
                 sqlda.Fill(dtblSong);
             }
             return View(dtblSong);
